@@ -1,0 +1,27 @@
+﻿@model List<employeeViewModel>
+
+<h1>all employees Info</h1>
+<hr />
+<table class="table table-sm">
+    <thead class="thead=dark">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">ID</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Position</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.ID</td>
+                <td>@item.Salary</td>
+                <td> src="@item.Position" width="20%"/></td>
+                <td> <a asp-controller="employee" asp-action="Details" asp-route-id="@item.ID">Details</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
